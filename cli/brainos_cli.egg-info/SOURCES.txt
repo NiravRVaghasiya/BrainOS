@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+brainos/__init__.py
+brainos/cli.py
+brainos/generator.py
+brainos/plugins.py
+brainos_cli.egg-info/PKG-INFO
+brainos_cli.egg-info/SOURCES.txt
+brainos_cli.egg-info/dependency_links.txt
+brainos_cli.egg-info/entry_points.txt
+brainos_cli.egg-info/requires.txt
+brainos_cli.egg-info/top_level.txt

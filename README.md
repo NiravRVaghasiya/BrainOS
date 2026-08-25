@@ -8,7 +8,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![PyPI](https://img.shields.io/badge/pip%20install-brainos-orange.svg)](cli/)
+[![PyPI](https://img.shields.io/pypi/v/brainos-cli?color=orange&label=pip%20install%20brainos-cli)](https://pypi.org/project/brainos-cli/)
 [![Docs](https://img.shields.io/badge/docs-90%20files-purple.svg)](#repository-structure)
 [![Stars](https://img.shields.io/github/stars/niravvaghasiya/brainos?style=social)](https://github.com/niravvaghasiya/brainos)
 
@@ -41,10 +41,10 @@
 
 ## ⚡ Install
 
-### Via CLI (scaffold plugins into your project)
+### Via pip (live on PyPI)
 
 ```bash
-pip install brainos
+pip install brainos-cli
 ```
 
 ```bash
@@ -64,7 +64,7 @@ brainos add all
 brainos info hippocampal-index
 ```
 
-### Or just read the docs
+### Or just clone the knowledge base
 
 Clone and explore — zero dependencies, pure markdown:
 
@@ -200,7 +200,7 @@ Each plugin includes a **Python interface**, **implementation patterns**, **YAML
 |--------|-------|
 | Total files | 100+ |
 | Total size | ~350 KB |
-| CLI installable | `pip install brainos` |
+| CLI installable | [`pip install brainos-cli`](https://pypi.org/project/brainos-cli/) |
 | Brain regions covered | 8 primary + 4 support systems |
 | Information flow pathways | 8 |
 | Practical techniques | 10 |

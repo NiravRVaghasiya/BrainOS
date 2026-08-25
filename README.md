@@ -8,6 +8,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![PyPI](https://img.shields.io/badge/pip%20install-brainos-orange.svg)](cli/)
 [![Docs](https://img.shields.io/badge/docs-90%20files-purple.svg)](#repository-structure)
 [![Stars](https://img.shields.io/github/stars/niravvaghasiya/brainos?style=social)](https://github.com/niravvaghasiya/brainos)
 
@@ -17,7 +18,7 @@
 
 <br>
 
-[Explore the Architecture](#-architecture) · [Install a Plugin](#-plugins-brain-inspired-ai-components) · [Learn a Technique](#-techniques-evidence-based-methods) · [Understand the Flows](#-flows-information-pathways)
+[Explore the Architecture](#-architecture) · [Install via CLI](#-install) · [Browse Plugins](#-plugins-brain-inspired-ai-components) · [Learn a Technique](#-techniques-evidence-based-methods) · [Understand the Flows](#-flows-information-pathways)
 
 </div>
 
@@ -38,6 +39,44 @@
 
 ---
 
+## ⚡ Install
+
+### Via CLI (scaffold plugins into your project)
+
+```bash
+pip install brainos
+```
+
+```bash
+# See all 12 plugins
+brainos list
+
+# Initialize project structure
+brainos init
+
+# Add a specific plugin (generates working Python class + config + tests)
+brainos add sensory-gate --with-config --with-tests
+
+# Add all plugins at once
+brainos add all
+
+# Get details about any plugin
+brainos info hippocampal-index
+```
+
+### Or just read the docs
+
+Clone and explore — zero dependencies, pure markdown:
+
+```bash
+git clone https://github.com/niravvaghasiya/BrainOS.git
+cd BrainOS
+```
+
+> Each plugin in `_plugins/` is a complete architecture spec. The CLI generates starter code from these specs into your project.
+
+---
+
 ## 📐 Architecture
 
 The brain's information storage system, mapped as 8 numbered modules + 4 support systems:
@@ -54,12 +93,14 @@ brainos/
 ├── 05_emotional_tagging/       → Priority scoring (amygdala)
 ├── 06_motor_memory/            → Cerebellum (body autopilot)
 ├── 07_language_networks/       → Broca + Wernicke (speech/comprehension)
+├── 07_language_networks/       → Broca + Wernicke (speech/comprehension)
 ├── 08_default_mode_network/    → Background processing (creativity, simulation)
 │
 ├── _system/                    → Infrastructure (neurotransmitters, sleep, plasticity)
 ├── _flows/                     → Information pathways between systems
 ├── _techniques/                → Evidence-based learning methods
-└── _plugins/                   → Brain-inspired AI/Agent components
+├── _plugins/                   → Brain-inspired AI/Agent component specs
+└── cli/                        → pip-installable CLI (brainos add <plugin>)
 ```
 
 Every module contains:
@@ -157,8 +198,9 @@ Each plugin includes a **Python interface**, **implementation patterns**, **YAML
 
 | Metric | Value |
 |--------|-------|
-| Total files | 90 |
-| Total size | ~330 KB |
+| Total files | 100+ |
+| Total size | ~350 KB |
+| CLI installable | `pip install brainos` |
 | Brain regions covered | 8 primary + 4 support systems |
 | Information flow pathways | 8 |
 | Practical techniques | 10 |

@@ -2,6 +2,25 @@
 
 All notable changes to BrainOS will be documented here.
 
+## [1.1.0] - 2026-08-28
+
+### Added
+
+- All 12 plugins now generate complete, working implementations
+- Full pytest test suite (40+ tests)
+- Working demo agent (examples/01_memory_agent/)
+- Token savings benchmark with real numbers (examples/02_token_benchmark/)
+- GitHub Actions CI (Python 3.10-3.12)
+- Architecture diagrams (docs/assets/)
+- Framework integration guide (docs/INTEGRATION_GUIDE.md)
+- Makefile for common operations
+
+### Fixed
+
+- Duplicate 07_language_networks entry in README architecture tree
+- Build artifacts removed from version control
+- Added .gitignore
+
 ## [1.0.0] - 2026-08-25
 
 ### 🎉 Initial Release

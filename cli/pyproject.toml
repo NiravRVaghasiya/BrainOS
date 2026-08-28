@@ -30,6 +30,11 @@ all = [
     "chromadb>=0.4",
     "networkx>=3.0",
 ]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+]
 
 [project.scripts]
 brainos = "brainos.cli:main"

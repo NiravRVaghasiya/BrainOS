@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600" font-family="Arial, Helvetica, sans-serif" role="img" aria-label="Brain versus AI comparison: eight brain regions mapped to their AI component equivalents">
+  <defs>
+    <filter id="shadow3" x="-6%" y="-6%" width="112%" height="124%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#1E293B" flood-opacity="0.18"/>
+    </filter>
+    <marker id="mapArrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2,2 L9,6 L2,10" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="600" fill="#FFFFFF"/>
+  <text x="450" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1E293B">Brain &#8596; AI: Eight Core Mappings</text>
+
+  <!-- Column headers -->
+  <text x="185" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#64748B">HUMAN BRAIN</text>
+  <text x="715" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#64748B">AI SYSTEM</text>
+
+  <!-- Stylized brain outline behind the left column (flat, decorative) -->
+  <g opacity="0.10" fill="none" stroke="#8B5CF6" stroke-width="3">
+    <path d="M120,300 C90,250 120,200 175,205 C185,175 245,175 255,205 C300,200 320,245 300,285 C320,320 295,365 250,360 C240,390 180,390 165,360 C115,362 95,330 120,300 Z"/>
+    <path d="M175,205 C180,250 175,320 165,360"/>
+    <path d="M255,205 C250,255 258,320 250,360"/>
+    <path d="M120,300 C170,290 230,290 300,285"/>
+  </g>
+
+  <!-- ================= ROWS ================= -->
+  <!-- Row template: brain box (left) + AI box (right) + arrow + relationship label -->
+
+  <!-- 1. Sensory Buffer -> Input Preprocessing -->
+  <rect x="60" y="92" width="250" height="46" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="120" text-anchor="middle" font-size="13" fill="#1E293B">Sensory Buffer</text>
+  <rect x="590" y="92" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="120" text-anchor="middle" font-size="13" fill="#1E293B">Input Preprocessing</text>
+  <line x1="312" y1="115" x2="588" y2="115" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="109" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">raw &#8594; structured</text>
+
+  <!-- 2. Attention Gate -> Relevance Scoring -->
+  <rect x="60" y="152" width="250" height="46" rx="8" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="180" text-anchor="middle" font-size="13" fill="#1E293B">Attention Gate</text>
+  <rect x="590" y="152" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="180" text-anchor="middle" font-size="13" fill="#1E293B">Relevance Scoring</text>
+  <line x1="312" y1="175" x2="588" y2="175" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="169" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">select what matters</text>
+
+  <!-- 3. Working Memory -> Context Window -->
+  <rect x="60" y="212" width="250" height="46" rx="8" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="240" text-anchor="middle" font-size="13" fill="#1E293B">Working Memory</text>
+  <rect x="590" y="212" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="240" text-anchor="middle" font-size="13" fill="#1E293B">Context Window</text>
+  <line x1="312" y1="235" x2="588" y2="235" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="229" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">limited active capacity</text>
+
+  <!-- 4. Hippocampus -> Vector DB + Index -->
+  <rect x="60" y="272" width="250" height="46" rx="8" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="300" text-anchor="middle" font-size="13" fill="#1E293B">Hippocampus</text>
+  <rect x="590" y="272" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="300" text-anchor="middle" font-size="13" fill="#1E293B">Vector DB + Index</text>
+  <line x1="312" y1="295" x2="588" y2="295" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="289" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">embed, store, retrieve</text>
+
+  <!-- 5. Episodic Memory -> Conversation Logs + RAG -->
+  <rect x="60" y="332" width="250" height="46" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="360" text-anchor="middle" font-size="13" fill="#1E293B">Episodic Memory</text>
+  <rect x="590" y="332" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="360" text-anchor="middle" font-size="13" fill="#1E293B">Conversation Logs + RAG</text>
+  <line x1="312" y1="355" x2="588" y2="355" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="349" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">events with context</text>
+
+  <!-- 6. Semantic Memory -> Knowledge Graph -->
+  <rect x="60" y="392" width="250" height="46" rx="8" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="420" text-anchor="middle" font-size="13" fill="#1E293B">Semantic Memory</text>
+  <rect x="590" y="392" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="420" text-anchor="middle" font-size="13" fill="#1E293B">Knowledge Graph</text>
+  <line x1="312" y1="415" x2="588" y2="415" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="409" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">facts + relationships</text>
+
+  <!-- 7. Amygdala -> Salience Scoring -->
+  <rect x="60" y="452" width="250" height="46" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="480" text-anchor="middle" font-size="13" fill="#1E293B">Amygdala</text>
+  <rect x="590" y="452" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="480" text-anchor="middle" font-size="13" fill="#1E293B">Salience Scoring</text>
+  <line x1="312" y1="475" x2="588" y2="475" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="469" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">importance weighting</text>
+
+  <!-- 8. Sleep Consolidation -> Background Jobs -->
+  <rect x="60" y="512" width="250" height="46" rx="8" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="185" y="540" text-anchor="middle" font-size="13" fill="#1E293B">Sleep Consolidation</text>
+  <rect x="590" y="512" width="250" height="46" rx="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" filter="url(#shadow3)"/>
+  <text x="715" y="540" text-anchor="middle" font-size="13" fill="#1E293B">Background Jobs</text>
+  <line x1="312" y1="535" x2="588" y2="535" stroke="#6B7280" stroke-width="1.8" marker-end="url(#mapArrow)"/>
+  <text x="450" y="529" text-anchor="middle" font-size="10" font-style="italic" fill="#64748B">offline processing</text>
+</svg>

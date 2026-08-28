@@ -1,0 +1,26 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          pip install -e cli/
+          pip install pytest pytest-cov ruff
+          brainos add all
+      - name: Lint
+        run: ruff check cli/ tests/ --select E,W,F --ignore E501
+      - name: Test
+        run: pytest tests/ -v --cov=brainos --cov-report=term-missing
+      - name: Verify imports
+        run: python -c "import brainos_plugins; print('All plugins importable')"

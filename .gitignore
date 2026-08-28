@@ -1,16 +1,36 @@
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
 
-# Editor files
-.vscode/
+# Virtual environments
+.env
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# IDE
 .idea/
+.vscode/
 *.swp
 *.swo
-*~
 
-# Temporary files
-*.tmp
-*.bak
-*.log
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+brainos_plugins/
+config/brainos.yaml

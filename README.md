@@ -9,7 +9,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![PyPI](https://img.shields.io/pypi/v/brainos-cli?color=orange&label=pip%20install%20brainos-cli)](https://pypi.org/project/brainos-cli/)
-[![Docs](https://img.shields.io/badge/docs-90%20files-purple.svg)](#repository-structure)
+[![Docs](https://img.shields.io/badge/docs-96%20files-purple.svg)](#-architecture)
 [![Stars](https://img.shields.io/github/stars/niravvaghasiya/brainos?style=social)](https://github.com/niravvaghasiya/brainos)
 
 <br>
@@ -35,7 +35,17 @@
 | 🧠 **Neuroscience Learner** | Structured, code-like understanding of brain systems |
 | 🏗️ **Systems Architect** | Bio-inspired patterns for retrieval, caching, and orchestration |
 
-**No paywall. No fluff. Just 90 markdown files of structured knowledge you can actually use.**
+**No paywall. No fluff. Just 96 markdown files of structured knowledge you can actually use.**
+
+---
+
+## Demo
+
+<p align="center">
+  <img src="docs/assets/demo.gif" alt="BrainOS Demo" width="700">
+</p>
+
+> An AI agent using sensory-gate + hippocampal-index + working-memory + forgetting-engine — retrieving conversation context from 20 turns ago in under 200ms.
 
 ---
 
@@ -77,6 +87,24 @@ cd BrainOS
 
 ---
 
+## 🚀 Try It Live
+
+Runnable, dependency-light examples that use the generated plugins end to end:
+
+| Example | What it shows | Run it |
+|---|---|---|
+| [Memory Agent](examples/01_memory_agent/) | A chat agent with sensory-gate + working-memory + hippocampal-index + forgetting-engine, recalling context from earlier turns | `make demo` |
+| [Token Benchmark](examples/02_token_benchmark/) | Measured token savings vs a naive full-history agent (offline, no API key) | `make benchmark` |
+
+More resources:
+
+- **[Integration Guide](docs/INTEGRATION_GUIDE.md)** — wire BrainOS plugins into LangChain, LangGraph, CrewAI, or vanilla Python.
+- **Diagrams** — [architecture overview](docs/assets/architecture_overview.svg), [information flow](docs/assets/information_flow.svg), [brain vs. AI](docs/assets/brain_vs_ai.svg).
+
+Common tasks are wrapped in a `Makefile`: `make install`, `make test`, `make lint`, `make demo`, `make benchmark`.
+
+---
+
 ## 📐 Architecture
 
 The brain's information storage system, mapped as 8 numbered modules + 4 support systems:
@@ -93,14 +121,16 @@ brainos/
 ├── 05_emotional_tagging/       → Priority scoring (amygdala)
 ├── 06_motor_memory/            → Cerebellum (body autopilot)
 ├── 07_language_networks/       → Broca + Wernicke (speech/comprehension)
-├── 07_language_networks/       → Broca + Wernicke (speech/comprehension)
 ├── 08_default_mode_network/    → Background processing (creativity, simulation)
 │
 ├── _system/                    → Infrastructure (neurotransmitters, sleep, plasticity)
 ├── _flows/                     → Information pathways between systems
 ├── _techniques/                → Evidence-based learning methods
 ├── _plugins/                   → Brain-inspired AI/Agent component specs
-└── cli/                        → pip-installable CLI (brainos add <plugin>)
+├── cli/                        → pip-installable CLI (brainos add <plugin>)
+├── examples/                   → Runnable demos (memory agent, token benchmark)
+├── tests/                      → pytest suite for the generated plugins
+└── docs/                       → Diagrams + integration guide
 ```
 
 Every module contains:
@@ -108,6 +138,8 @@ Every module contains:
 - `mechanisms.md` — Biological machinery (molecular → circuit level)
 - `examples.md` — Real-world demonstrations and experiments
 - `failures.md` — Disorders, decay, and what breaks
+
+![Architecture Overview](docs/assets/architecture_overview.svg)
 
 ---
 
@@ -130,12 +162,27 @@ Every module contains:
 | [`dmn-incubator`](_plugins/11_dmn_incubator.md) | Default Mode Network | Background insight generation | — |
 | [`metacognition`](_plugins/12_metacognition_monitor.md) | Prefrontal Monitor | Self-eval + strategy selection | Compounds |
 
+### Benchmarked Results
+
+Measured on a simulated 50-turn agent conversation (see [`examples/02_token_benchmark/`](examples/02_token_benchmark/)), counted with tiktoken `cl100k_base`:
+
+| Configuration | Total Tokens | vs Naive | Peak Context |
+|---|---|---|---|
+| Naive (full history) | 424,361 | — | 16,540 |
+| + Sensory Gate | 278,627 | -34% | 10,820 |
+| + Attention Filter | 162,236 | -62% | 3,997 (budget) |
+| + Forgetting Engine | 138,690 | -67% | 5,567 |
+| Full BrainOS Stack | 79,381 | -81% | 3,114 (budget) |
+
+> Real, reproducible numbers from `examples/02_token_benchmark/`. Run it yourself: `make benchmark`.
+> The naive baseline grows tokens **O(n²)** (each call resends all history); the full stack keeps it **O(n)** by bounding context.
+
 ### Quick Start: Which plugins solve your problem?
 
 ```
 Context window overflows?     → sensory-gate + attention-filter + forgetting-engine
 Agent forgets conversations?  → episodic-store + consolidator
-Redundant tool calls?         → procedural-cache + pattern-separator
+Redundant tool calls?         → procedural-cache + working-memory
 Can't find relevant context?  → hippocampal-index + salience-tagger
 No self-improvement?          → metacognition + dmn-incubator
 ```
@@ -198,13 +245,15 @@ Each plugin includes a **Python interface**, **implementation patterns**, **YAML
 
 | Metric | Value |
 |--------|-------|
-| Total files | 100+ |
-| Total size | ~350 KB |
+| Total files | 130+ |
+| Total size | ~530 KB |
 | CLI installable | [`pip install brainos-cli`](https://pypi.org/project/brainos-cli/) |
 | Brain regions covered | 8 primary + 4 support systems |
 | Information flow pathways | 8 |
 | Practical techniques | 10 |
-| Installable AI plugins | 12 |
+| Installable AI plugins | 12 (all with working code + tests) |
+| Runnable examples | 2 (memory agent + token benchmark) |
+| Test suite | 43 tests, CI on Python 3.10–3.12 |
 | Disorders/failures documented | 50+ |
 | Real-world examples | 80+ |
 | Research citations | 100+ |
@@ -233,6 +282,11 @@ _techniques/README.md → Pick by effectiveness rating → Follow the protocol
 _flows/README.md → Follow the numbered pathway → See cross-system interactions
 ```
 
+**I want to run the code:**
+```
+make install → make demo (chat agent) → make benchmark (token savings) → make test
+```
+
 ---
 
 ## 🤝 Contributing
@@ -241,7 +295,7 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 Areas especially open for contribution:
 - 🔬 Additional research citations and experiment descriptions
-- 🧪 Plugin implementations (Python packages from the architecture specs)
+- 🧪 More framework integrations and example apps (LlamaIndex, Autogen, ...)
 - 📊 Diagrams and visualizations of pathways
 - 🌍 Translations
 - 🧑‍⚕️ Clinical case studies for the `failures.md` files
